@@ -4,23 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PyBotCraft — разработка Telegram-ботов под ключ</title>
-<meta name="description" content="Разрабатываю Telegram-ботов под ключ: продажи, заявки, оплата, рассылки, админ-панели. Понятная цена, исходники ваши, поддержка после запуска. Расчёт бесплатно.">
+<meta name="description" content="Разрабатываю Telegram-ботов под ключ: продажи, заявки, оплата, рассылки, админ-панели и ИИ-ассистенты на нейросетях. Понятная цена, исходники ваши, поддержка после запуска. Расчёт бесплатно.">
 <meta name="theme-color" content="#06080b">
-<!-- TODO: укажите реальный адрес сайта (GitHub Pages или свой домен) -->
-<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<link rel="canonical" href="https://vilyzo.github.io/pybotcraft/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="PyBotCraft">
 <meta property="og:title" content="PyBotCraft — Telegram-боты под ключ">
 <meta property="og:description" content="Бот в Telegram, который продаёт и принимает заявки, пока вы спите. Расчёт стоимости бесплатно.">
-<!-- TODO: укажите адрес сайта и загрузите картинку 1200x630 для превью в соцсетях -->
-<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
-<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/og.png">
+<!-- TODO: загрузите картинку 1200x630 с именем og.png в корень репозитория, это превью ссылки в соцсетях -->
+<meta property="og:url" content="https://vilyzo.github.io/pybotcraft/">
+<meta property="og:image" content="https://vilyzo.github.io/pybotcraft/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PyBotCraft — Telegram-боты под ключ">
 <meta name="twitter:description" content="Бот в Telegram, который продаёт и принимает заявки, пока вы спите. Расчёт стоимости бесплатно.">
-<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/og.png">
+<meta name="twitter:image" content="https://vilyzo.github.io/pybotcraft/og.png">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🤖%3C/text%3E%3C/svg%3E">
 
@@ -199,10 +198,10 @@ h1 em{font-style:normal;color:var(--accent);text-shadow:0 0 30px rgba(61,245,167
 /* pricing */
 .plans{display:grid;gap:20px;align-items:stretch}
 .plan{display:flex;flex-direction:column;padding:32px 28px}
-.plan__name{font:500 .8rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.plan__price{font:700 clamp(1.8rem,5vw,2.3rem)/1.1 var(--font-display);margin:18px 0 6px}
-.plan__term{color:var(--muted);font-size:.9rem}
-.plan ul{display:grid;gap:12px;margin:26px 0 30px;flex:1}
+.card p.plan__name{font:500 .8rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:0}
+.card p.plan__price{font:700 clamp(1.5rem,4.5vw,1.85rem)/1.1 var(--font-display);color:var(--text);margin:18px 0 6px;white-space:nowrap}
+.card p.plan__term{color:var(--muted);font-size:.9rem;margin-top:0}
+.plan ul{display:grid;align-content:start;gap:12px;margin:26px 0 30px;flex:1}
 .plan li{display:flex;gap:12px;font-size:.95rem}
 .plan li svg{width:18px;height:18px;margin-top:3px;flex:none;stroke:var(--accent);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .plan--hot{background:linear-gradient(180deg,rgba(61,245,167,.1),rgba(61,245,167,.02));border-color:rgba(61,245,167,.55);box-shadow:0 0 70px -25px rgba(61,245,167,.5)}
@@ -246,6 +245,18 @@ footer a:hover{text-decoration:underline}
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * 80ms)}
 .js .reveal.in{opacity:1;transform:none}
 
+/* ai */
+.ai__grid{display:grid;gap:24px;align-items:start}
+.ai__list{display:grid;gap:14px}
+.ai-card{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px}
+.ai-card .icon{margin-bottom:0}
+.ai-card p{margin-top:6px}
+.ai__cta{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:24px;color:var(--muted);font-size:.95rem}
+.ai__cta .btn{white-space:nowrap}
+.ai__chat .chat{margin-inline:auto}
+.ai-tag{display:inline-block;margin-left:6px;padding:2px 7px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font:600 .68rem/1.4 var(--font-mono);vertical-align:middle}
+.chat__body--static{height:auto;justify-content:flex-start;-webkit-mask-image:none;mask-image:none;padding-bottom:22px}
+
 /* >= 768 */
 @media (min-width:768px){
   .wrap{width:min(1180px,100% - 64px)}
@@ -255,6 +266,7 @@ footer a:hover{text-decoration:underline}
   .step{padding-bottom:40px}
   .plans-note{flex-direction:row;justify-content:center}
   .footer__in{flex-direction:row;justify-content:space-between;align-items:center}
+  .ai__cta{flex-direction:row;align-items:center;gap:20px}
 }
 /* >= 1024 */
 @media (min-width:1024px){
@@ -263,6 +275,7 @@ footer a:hover{text-decoration:underline}
   .burger{display:none}
   .hero__grid{grid-template-columns:1.1fr .9fr;gap:64px}
   .grid--3{grid-template-columns:repeat(3,1fr)}
+  .ai__grid{grid-template-columns:1.1fr .9fr;gap:40px}
   .why{grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .editor{position:sticky;top:96px}
   .editor pre{font-size:.82rem}
@@ -299,6 +312,11 @@ footer a:hover{text-decoration:underline}
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></symbol>
     <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/><path d="M17.25 13.5v7.5M13.5 17.25H21"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5v-17"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 9-12h-7z"/></symbol>
     <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v1.5M15 13v1.5"/><circle cx="12" cy="3.5" r="1"/></symbol>
   </defs>
 </svg>
@@ -315,6 +333,7 @@ footer a:hover{text-decoration:underline}
     </a>
     <nav class="nav" id="nav" aria-label="Основная навигация">
       <a href="#services">Услуги</a>
+      <a href="#ai">ИИ-боты</a>
       <a href="#process">Процесс</a>
       <a href="#pricing">Цены</a>
       <a href="#faq">FAQ</a>
@@ -334,7 +353,7 @@ footer a:hover{text-decoration:underline}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero__grid">
     <div>
-      <p class="pill"><i aria-hidden="true"></i>Telegram-боты под ключ</p>
+      <p class="pill"><i aria-hidden="true"></i>Telegram-боты под ключ + ИИ</p>
       <h1 id="hero-title">Бот в Telegram, который продаёт и принимает заявки, <em>пока вы спите</em></h1>
       <p class="lead">Разрабатываю ботов от идеи до запуска: принимают заказы, берут оплату, напоминают клиентам и сообщают вам о каждой заявке. Вы занимаетесь бизнесом, бот — рутиной.</p>
       <div class="hero__cta">
@@ -347,6 +366,7 @@ footer a:hover{text-decoration:underline}
         <!-- TODO: поправьте минимальный срок запуска -->
         <li><svg aria-hidden="true"><use href="#i-check"/></svg>Запуск от 7 дней</li>
         <li><svg aria-hidden="true"><use href="#i-check"/></svg>Исходники — ваши</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>ИИ-ассистенты на нейросетях</li>
         <li><svg aria-hidden="true"><use href="#i-check"/></svg>Поддержка после запуска</li>
       </ul>
     </div>
@@ -372,7 +392,7 @@ footer a:hover{text-decoration:underline}
 <div class="trust">
   <div class="wrap">
     <ul aria-label="Технологии и возможности">
-      <li>Python</li><li>aiogram</li><li>PostgreSQL</li><li>Оплата</li><li>Админ-панель</li>
+      <li>Python</li><li>aiogram</li><li>ИИ / LLM</li><li>PostgreSQL</li><li>Оплата</li><li>Админ-панель</li>
     </ul>
   </div>
 </div>
@@ -416,6 +436,80 @@ footer a:hover{text-decoration:underline}
         <h3>Mini Apps, парсеры и автоматизация</h3>
         <p>Telegram Mini Apps, парсеры, автопостинг. Всё, что вы делаете руками каждый день, можно поручить скрипту.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3.1. ИИ-боты -->
+<section class="section" id="ai" aria-labelledby="ai-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">ии-боты</p>
+      <h2 id="ai-title">Подключу нейросеть — и бот начнёт отвечать клиентам сам</h2>
+      <p class="lead">ИИ-ассистент в Telegram знает ваши цены, условия и частые вопросы. Отвечает за секунды в любое время суток, а сложные случаи передаёт вам.</p>
+    </div>
+    <div class="ai__grid">
+      <div>
+        <div class="ai__list">
+          <article class="card ai-card reveal" style="--d:0">
+            <div class="icon"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+            <div>
+              <h3>Консультант по вашей базе знаний</h3>
+              <p>Отвечает по вашему прайсу, FAQ и документам, а не выдумывает. Если ответа в базе нет, честно говорит об этом и зовёт менеджера.</p>
+            </div>
+          </article>
+          <article class="card ai-card reveal" style="--d:1">
+            <div class="icon"><svg aria-hidden="true"><use href="#i-chat"/></svg></div>
+            <div>
+              <h3>Продавец, который не спит</h3>
+              <p>Подбирает товар или услугу, снимает частые возражения и передаёт вам уже тёплую заявку с контактами и сутью запроса.</p>
+            </div>
+          </article>
+          <article class="card ai-card reveal" style="--d:2">
+            <div class="icon"><svg aria-hidden="true"><use href="#i-mic"/></svg></div>
+            <div>
+              <h3>Голос, фото и документы</h3>
+              <p>Понимает голосовые сообщения, разбирает фото и файлы клиентов. Люди пишут так, как им удобно, вы получаете готовый текст.</p>
+            </div>
+          </article>
+          <article class="card ai-card reveal" style="--d:3">
+            <div class="icon"><svg aria-hidden="true"><use href="#i-zap"/></svg></div>
+            <div>
+              <h3>Автоматизация рутины</h3>
+              <p>Сортирует заявки, готовит ответы на отзывы, пишет описания товаров и посты. Часы ручной работы превращаются в минуты.</p>
+            </div>
+          </article>
+        </div>
+        <div class="ai__cta reveal">
+          <a class="btn btn--primary" href="http://t.me/pybotcraft?direct" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#i-send"/></svg>Обсудить ИИ-бота
+          </a>
+          <!-- TODO: при желании укажите цену подключения ИИ (например, «от N ₽ к любому тарифу») -->
+          <span>Стоимость зависит от задачи. Расчёт бесплатно.</span>
+        </div>
+      </div>
+
+      <div class="ai__chat reveal" style="--d:1">
+        <p class="sr-only">Пример диалога: клиент спрашивает про курс, ИИ-ассистент отвечает по базе знаний, а на вопрос без ответа в базе передаёт диалог менеджеру.</p>
+        <div class="chat" aria-hidden="true">
+          <div class="chat__bar">
+            <div class="avatar"><svg><use href="#i-spark"/></svg></div>
+            <div>
+              <div class="chat__name">Ассистент школы<span class="ai-tag">ИИ</span></div>
+              <div class="chat__status">отвечает по базе знаний</div>
+            </div>
+          </div>
+          <div class="chat__body chat__body--static">
+            <div class="msg msg--user">Подойдёт ли курс новичку без опыта?</div>
+            <div class="msg msg--bot">Да, курс начинается с нуля: 4 модуля, первый бесплатный. Ближайший поток стартует в понедельник. Записать вас?
+              <div class="kb"><span>Записаться</span><span>Позвать менеджера</span></div>
+            </div>
+            <div class="msg msg--user">А рассрочка есть?</div>
+            <div class="msg msg--bot">Точных условий рассрочки в моей базе нет, поэтому гадать не буду. Передаю вопрос менеджеру, он ответит в течение часа.</div>
+            <div class="msg msg--admin"><strong>🔔 Менеджеру передан диалог</strong><span>Вопрос о рассрочке · клиент ждёт ответа</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -538,8 +632,7 @@ footer a:hover{text-decoration:underline}
     <div class="plans">
       <article class="card plan reveal" style="--d:0">
         <p class="plan__name">Простой бот</p>
-        <!-- TODO: подставьте реальную цену и срок -->
-        <p class="plan__price">от 15 000&nbsp;₽</p>
+        <p class="plan__price">от 15&nbsp;000&nbsp;₽</p>
         <p class="plan__term">Срок: от 7 дней</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Меню, FAQ и приём заявок</li>
@@ -553,9 +646,8 @@ footer a:hover{text-decoration:underline}
       <article class="card plan plan--hot reveal" style="--d:1">
         <span class="badge">ЧАЩЕ ВСЕГО</span>
         <p class="plan__name">Бизнес-бот</p>
-        <!-- TODO: подставьте реальную цену и срок -->
-        <p class="plan__price">от 30 000&nbsp;₽</p>
-        <p class="plan__term">Срок: от 2-4 недель</p>
+        <p class="plan__price">от 30&nbsp;000&nbsp;₽</p>
+        <p class="plan__term">Срок: 2–4 недели</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Каталог или запись клиентов</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Оплата: ЮKassa, Stars, крипта</li>
@@ -568,13 +660,13 @@ footer a:hover{text-decoration:underline}
 
       <article class="card plan reveal" style="--d:2">
         <p class="plan__name">Индивидуальный проект</p>
-        <!-- TODO: подставьте реальную цену и срок -->
-        <p class="plan__price">от 80 000&nbsp;₽</p>
+        <p class="plan__price">от 80&nbsp;000&nbsp;₽</p>
         <p class="plan__term">Срок: по смете</p>
         <ul>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Сложная логика и несколько ролей</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Telegram Mini App</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Парсеры и автоматизация процессов</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>ИИ-ассистент на базе нейросети</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Несколько интеграций и аналитика</li>
         </ul>
         <a class="btn btn--ghost btn--block" href="http://t.me/pybotcraft?direct" target="_blank" rel="noopener noreferrer">Обсудить проект</a>
@@ -652,8 +744,11 @@ footer a:hover{text-decoration:underline}
       </details>
       <details name="faq">
         <summary>Нужен ли хостинг и кто за него платит?</summary>
-        <!-- TODO: укажите ориентировочную стоимость VPS -->
-        <p>Боту нужен небольшой сервер (VPS). Помогу выбрать тариф, настрою и разверну бота. Сервер оформляется на вас, платите вы напрямую хостинг-провайдеру, обычно это от 1500 ₽ в месяц.</p>
+        <p>Боту нужен небольшой сервер (VPS). Помогу выбрать тариф, настрою и разверну бота. Сервер оформляется на вас, платите вы напрямую хостинг-провайдеру, обычно это от 1&nbsp;500&nbsp;₽ в месяц.</p>
+      </details>
+      <details name="faq">
+        <summary>Можно ли подключить ChatGPT или другую нейросеть?</summary>
+        <p>Да. Подключаю языковые модели (OpenAI, Claude, Gemini, DeepSeek и другие) через API. Бот отвечает по вашей базе знаний, а если не уверен, передаёт диалог вам. Запросы к нейросети оплачиваются напрямую провайдеру модели, их стоимость зависит от числа диалогов, и я помогу прикинуть её заранее.</p>
       </details>
       <details name="faq">
         <summary>Кому принадлежит код?</summary>
